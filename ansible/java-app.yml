@@ -1,0 +1,16 @@
+---
+- name: Install Java
+  hosts: all
+  become: true
+  remote_user: praveenandra
+
+  vars:
+    source_dir: files
+    dest_dir: /home/praveenandra/
+    files:
+      - properties.py
+      - start.sh
+      - spring-petclinic-3.3.0-SNAPSHOT.jar
+
+  roles:
+    - java
